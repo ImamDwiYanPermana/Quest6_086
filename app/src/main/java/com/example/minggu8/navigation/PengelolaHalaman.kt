@@ -13,6 +13,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.minggu8.ui.screen.MahasiswaFormView
 import com.example.minggu8.ui.screen.RencanaStudyView
 import com.example.minggu8.ui.screen.SplashView
+import com.example.minggu8.ui.screen.Tampil
 import com.example.minggu8.ui.viewModel.MahasiswaViewModel
 import com.example.minggu8.ui.viewModel.RencanaStudyViewModel
 
@@ -63,6 +64,15 @@ fun MahasiswaApp(
                     navController.navigate(Halaman.Tampil.name)
                 },
               onBackButtonCliked   = { navController.popBackStack() }
+            )
+        }
+        composable(route = Halaman.Tampil.name) {
+            Tampil(
+                uiStateMahasiswa = mahasiswaUiState,
+                uiMahasiswa = krsViewModel.krsStateUi.collectAsState().value,
+                onClickButton = {
+                    navController.navigate(Halaman.Splash.name)
+                }
             )
         }
     }

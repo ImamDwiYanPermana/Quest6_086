@@ -21,7 +21,7 @@ import com.example.minggu8.R
 
 @Preview(showBackground = true)
 @Composable
-fun SplashView() {
+fun SplashView(onMulaiButton: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
